@@ -144,11 +144,11 @@ async def short_link(link):
     hour = current_time.hour
     
     if 1 <= hour < 13:  
-        api = "acda894b4b12a377de4341efe6232b6e6d0c5ea5"
-        site = "publicearn.com"
+        api = "530fbb45abb3bf93f03a8363538b892068674ec6"
+        site = "modijiurl.com"
     else:  
-        api = "acda894b4b12a377de4341efe6232b6e6d0c5ea5"
-        site = "publicearn.com"
+        api = "9c4fff86c127678f4330959d0abc8ea5f7d52813"
+        site = "modijiurl.com"
     
     shortzy = Shortzy(api, site) 
     short_link = await shortzy.convert(link)
