@@ -45,7 +45,7 @@ async def start_command(client: Client, message: Message):
                         await verify_user(id, token)
                     else:
                         return await message.reply_text(
-                            text="<b>Expired or invalid Verification Link 🫣</b>"
+                            text="<b>Expired or invalid Verification Link 🫣 Click /Start And Verify Again 😊</b>"
                         )
     
     if not is_admin: 
