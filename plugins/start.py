@@ -41,7 +41,7 @@ async def start_command(client: Client, message: Message):
                 if str(id) == verify_userid:
                     is_valid = await check_token(id, token)
                     if is_valid:
-                        await message.reply_text(text=f"<b>You Are Successfully Verified For 12hrs ❤️‍🩹\n\nYou Can Get Any Movie Files Without Verifiy Untill Next 12Hrs.</b>")
+                        await message.reply_text(text=f"<b>You Are Successfully Verified For 12hrs ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nTamil Movies/Series - https://t.me/+PJY1pwYOMVQ0NjU1\n\nVijay Tv Serials/Shows - https://t.me/+2xqd32VAQekxZjFl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
                         await verify_user(id, token)
                     else:
                         return await message.reply_text(
@@ -59,7 +59,7 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton("🔻 How to open and Verify 🔺", url="https://t.me/TamilSk_Demo/4")
             ]]
             await message.reply_text(
-                text="<b>Hello 👋🏻, You Need To Verify The Link To Get Movie Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>",
+                text="<b>Hello 👋🏻, You Need To Verify The Link To Get Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>",
                 protect_content=False,
                 
                 reply_markup=InlineKeyboardMarkup(btn)
