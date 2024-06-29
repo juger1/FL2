@@ -61,6 +61,7 @@ async def channel_post(client: Client, message: Message):
         previouscaptions = message.caption
     else:
         previouscaption = f"no caption"
+    file_name = previouscaptions
     filesize = human_readable_size(get_media_file_size(message))
     converted_id = post_message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
@@ -69,7 +70,7 @@ async def channel_post(client: Client, message: Message):
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔓 OPEN URL", url=f'{link}')]])
 
-    await reply_text.edit(f"{filesize} - <a href='{link}'>Click Here To Download</a>", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"""<b>🌫 <a href='{link}'>{file_name}({filesize})</a>\n\n🌫 <a href='{link}'>{file_name}</a>\n\n{filesize} - <a href='{link}'>Click Here To Download</a></b>""", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
