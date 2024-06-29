@@ -11,10 +11,10 @@ def human_readable_size(size):
         return f"{size} Bytes"
     size /= 1024.0
     if size < 1024:
-        return f"{size:.2f} KB"
+        return f"{int(size)} KB"
     size /= 1024.0
     if size < 1024:
-        return f"{size:.2f} MB"
+        return f"{int(size)} MB"
     size /= 1024.0
     return f"{size:.2f} GB"
 
@@ -67,11 +67,12 @@ async def link_generator(client: Client, message: Message):
             await channel_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote=True)
             continue
 
+    file_name = channel_message.caption if channel_message.caption else "No caption"
     filesize = human_readable_size(get_media_file_size(msg_id))
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
     link = f"https://filestore.rapidbots.workers.dev?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-
-    reply_message = f"<b>Here is your link</b>\n\nFile Size: {filesize}\n\n<code>{link}</code>"
+    
+    reply_message = f"""<b>🌫 <a href='{link}'>{file_name}({filesize})</a>\n\n🌫 <a href='{link}'>{file_name}</a>\n\n{filesize} - <a href='{link}'>Click Here To Download</a></b>"""
     await channel_message.reply_text(reply_message, quote=True, reply_markup=reply_markup)
