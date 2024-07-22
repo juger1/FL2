@@ -148,7 +148,7 @@ async def short_link(link):
         site = "modijiurl.com"
     else:  
         api = "acda894b4b12a377de4341efe6232b6e6d0c5ea5"
-        site = "modijiurl.com"
+        site = "publicearn.com"
     
     shortzy = Shortzy(api, site) 
     short_link = await shortzy.convert(link)
