@@ -144,8 +144,8 @@ async def short_link(link):
     hour = current_time.hour
     
     if 1 <= hour < 13:  
-        api = "e36f2573636d8a5dd3b81b64ce434db80002867a"
-        site = "modijiurl.com"
+        api = "acda894b4b12a377de4341efe6232b6e6d0c5ea5"
+        site = "publicearn.com"
     else:  
         api = "acda894b4b12a377de4341efe6232b6e6d0c5ea5"
         site = "publicearn.com"
