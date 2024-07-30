@@ -123,11 +123,13 @@ async def start_command(client: Client, message: Message):
             try:
                 ss = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT())
                 tt = await ss.reply_text(f"<b>Dᴏɴ'ᴛ Mɪss Bᴇsᴛ Oғғᴇʀs/Dᴇᴀʟs ɪɴ Aᴍᴀᴢᴏɴ, ғʟɪᴘᴋᴀʀᴛ Aɴᴅ Mᴀɴʏ Oɴʟɪɴᴇ Sʜᴏᴘᴘɪɴɢ Aᴘᴘs. Sᴀᴠᴇ ʟᴏᴛ ᴏғ Mᴏɴᴇʏ 💰\n\nBʏ Jᴏɪɴɪɴɢ Oᴜʀ Dᴀɪʟʏ Oғғᴇʀs Uᴘʟᴏᴀᴅɪɴɢ Cʜᴀɴɴᴇʟ 👇👇👇\nhttps://t.me/Sk_Daily_Offers\nhttps://t.me/Sk_Daily_Offers</b>",disable_web_page_preview=True, quote=True)
+                delete_tasks.append(asyncio.create_task(delete_file(tt)))
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 ss = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT())
                 tt = await ss.reply_text(f"<b>Dᴏɴ'ᴛ Mɪss Bᴇsᴛ Oғғᴇʀs/Dᴇᴀʟs ɪɴ Aᴍᴀᴢᴏɴ, ғʟɪᴘᴋᴀʀᴛ Aɴᴅ Mᴀɴʏ Oɴʟɪɴᴇ Sʜᴏᴘᴘɪɴɢ Aᴘᴘs. Sᴀᴠᴇ ʟᴏᴛ ᴏғ Mᴏɴᴇʏ 💰\n\nBʏ Jᴏɪɴɪɴɢ Oᴜʀ Dᴀɪʟʏ Oғғᴇʀs Uᴘʟᴏᴀᴅɪɴɢ Cʜᴀɴɴᴇʟ 👇👇👇\nhttps://t.me/Sk_Daily_Offers\nhttps://t.me/Sk_Daily_Offers</b>",disable_web_page_preview=True, quote=True)
+                delete_tasks.append(asyncio.create_task(delete_file(tt)))
             except Exception as e:
                 # Log exceptions
                 logging.error(f"Exception occurred while processing messages: {e}")
