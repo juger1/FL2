@@ -74,5 +74,5 @@ async def link_generator(client: Client, message: Message):
     link = f"https://filestore.rapidbots.workers.dev?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
     
-    reply_message = f"""<b>🌫 <a href='{link}'>{file_name}({filesize})</a>\n\n🌫 <a href='{link}'>{file_name}</a>\n\n{filesize} - <a href='{link}'>Click Here To Download</a></b>"""
+    reply_message = f"<b>Here is your link</b>\n\n<code>{link}</code>"
     await channel_message.reply_text(reply_message, quote=True, reply_markup=reply_markup)
