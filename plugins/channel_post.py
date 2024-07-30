@@ -59,6 +59,8 @@ async def channel_post(client: Client, message: Message):
         previouscaptions = message.caption
     elif message.video:
         previouscaptions = message.caption
+    elif message.photo:
+        previouscaptions = None
     else:
         previouscaption = f"no caption"
     file_name = previouscaptions
