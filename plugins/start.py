@@ -41,7 +41,7 @@ async def start_command(client: Client, message: Message):
                 if str(id) == verify_userid:
                     is_valid = await check_token(id, token)
                     if is_valid:
-                        await message.reply_text(text=f"<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nTamil Movies/Series - https://t.me/+olErE7817bAyMjk1\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
+                        await message.reply_text(text=f"<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nNaruto Shippuden Tamil - https://t.me/+Q3fgiRFgEOViY2I1\n\nTamil Movies/Series - https://t.me/+olErE7817bAyMjk1\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
                         await verify_user(id, token)
                     else:
                         return await message.reply_text(
