@@ -8,19 +8,73 @@ import asyncio
 import time
 from pyrogram import Client, filters, __version__
 from pyrogram.enums import ParseMode
+from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
+from typing import Any, Optional
+from pyrogram.raw.types.messages import Messages
 
 logging.basicConfig(level=logging.INFO)
 
 async def delete_file(message: Message):
     await asyncio.sleep(30)
     await message.delete()
+
+async def parse_file_id(message: "Message") -> Optional[FileId]:
+    media = get_media_from_message(message)
+    if media:
+        return FileId.decode(media.file_id)
+
+async def parse_file_unique_id(message: "Messages") -> Optional[str]:
+    media = get_media_from_message(message)
+    if media:
+        return media.file_unique_id
+
+async def get_file_ids(client: Client, chat_id: int, id: int) -> Optional[FileId]:
+    message = await client.get_messages(chat_id, id)
+    media = get_media_from_message(message)
+    file_unique_id = await parse_file_unique_id(message)
+    file_id = await parse_file_id(message)
+    setattr(file_id, "file_size", getattr(media, "file_size", 0))
+    setattr(file_id, "mime_type", getattr(media, "mime_type", ""))
+    setattr(file_id, "file_name", getattr(media, "file_name", ""))
+    setattr(file_id, "unique_id", file_unique_id)
+    return file_id
+
+def get_media_from_message(message: "Message") -> Any:
+    media_types = (
+        "audio",
+        "document",
+        "photo",
+        "sticker",
+        "animation",
+        "video",
+        "voice",
+        "video_note",
+    )
+    for attr in media_types:
+        media = getattr(message, attr, None)
+        if media:
+            return media
+
+
+def get_hash(media_msg: Message) -> str:
+    media = get_media_from_message(media_msg)
+    return getattr(media, "file_unique_id", "")[:6]
+
+def get_name(media_msg: Message) -> str:
+    media = get_media_from_message(media_msg)
+    return getattr(media, 'file_name', "")
+
+def get_media_file_size(m):
+    media = get_media_from_message(m)
+    return getattr(media, "file_size", 0)
+
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -118,7 +172,18 @@ async def start_command(client: Client, message: Message):
             else:
                 caption = "" if not msg.caption else msg.caption.html
 
-            reply_markup = None
+            log_msg = await client.copy_message(
+                    chat_id=FL_CHANNEL,
+                    from_chat_id=client.db_channel.id,
+                    message_id=msg.id,
+                )
+            stream = f"https://tamilskf2l-a8779500e1bf.herokuapp.com/watch/{get_hash(log_msg)}{str(log_msg.id)}"
+
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton("Watch online/ Fast Download", url=stream)]
+                ]
+            )
 
             try:
                 ss = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT())
