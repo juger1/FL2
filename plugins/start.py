@@ -181,7 +181,7 @@ async def start_command(client: Client, message: Message):
 
             reply_markup = InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Fast Download", url=stream)]
+                    [InlineKeyboardButton("Fast Download Link (Google)", url=stream)]
                 ]
             )
 
