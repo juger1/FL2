@@ -7,9 +7,6 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 
-#cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
-URL = os.environ.get("URL", "https://sk.tamilsk.workers.dev/")
-
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
