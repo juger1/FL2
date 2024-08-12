@@ -177,7 +177,7 @@ async def start_command(client: Client, message: Message):
                     from_chat_id=client.db_channel.id,
                     message_id=msg.id,
                 )
-            stream = f"https://tamilskf2l-a8779500e1bf.herokuapp.com/{get_hash(log_msg)}{str(log_msg.id)}"
+            stream = f"https://tamilskf2l-a8779500e1bf.herokuapp.com/dl/{get_hash(log_msg)}{str(log_msg.id)}"
 
             reply_markup = InlineKeyboardMarkup(
                 [
