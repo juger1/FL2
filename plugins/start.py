@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, VERIFY_MSG, VERIFIED_MSG
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -75,6 +75,8 @@ def get_media_file_size(m):
     media = get_media_from_message(m)
     return getattr(media, "file_size", 0)
 
+verifymsg = VERIFY_MSG
+verifiedmsg = VERIFIED_MSG
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -95,7 +97,7 @@ async def start_command(client: Client, message: Message):
                 if str(id) == verify_userid:
                     is_valid = await check_token(id, token)
                     if is_valid:
-                        await message.reply_text(text=f"<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nNaruto Shippuden Tamil - https://t.me/+Q3fgiRFgEOViY2I1\n\nTamil Movies/Series - https://t.me/+lW8rqXwP8qQ0ODZl\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
+                        await message.reply_text(text=f"{verifiedmsg}")
                         await verify_user(id, token)
                     else:
                         return await message.reply_text(
@@ -113,7 +115,7 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton("🔻 How to open and Verify 🔺", url="https://t.me/TamilSk_Demo/3")
             ]]
             await message.reply_text(
-                text="<b>Hello 👋🏻, You Need To Verify The Link To Get Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>",
+                text="{verifymsg}",
                 protect_content=False,
                 
                 reply_markup=InlineKeyboardMarkup(btn)
