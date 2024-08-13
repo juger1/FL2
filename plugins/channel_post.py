@@ -6,8 +6,10 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 
 from bot import Bot
-from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FURL
 from helper_func import encode, get_media_file_size
+
+surl = FURL
 
 def human_readable_size(size):
     if size < 1024:
@@ -68,7 +70,7 @@ async def channel_post(client: Client, message: Message):
         converted_id = post_message.id * abs(client.db_channel.id)
         string = f"get-{converted_id}"
         base64_string = await encode(string)
-        link = f"https://filestore.rapidbots.workers.dev?start={base64_string}"
+        link = f"{surl}{base64_string}"
         reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔓 OPEN URL", url=f'{link}')]])
         await reply_text.edit(f"<b>Here is your link :\n\n<code>{link}</code></b>", reply_markup=reply_markup, disable_web_page_preview = True)
         
@@ -81,7 +83,7 @@ async def channel_post(client: Client, message: Message):
         converted_id = post_message.id * abs(client.db_channel.id)
         string = f"get-{converted_id}"
         base64_string = await encode(string)
-        link = f"https://filestore.rapidbots.workers.dev?start={base64_string}"
+        link = f"{surl}{base64_string}"
 
         reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔓 OPEN URL", url=f'{link}')]])
         await reply_text.edit(f"{filesize} - <a href='{link}'>Click Here To Download</a>", reply_markup=reply_markup, disable_web_page_preview = True)
@@ -98,7 +100,7 @@ async def new_post(client: Client, message: Message):
     converted_id = message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
-    link = f"https://filestore.rapidbots.workers.dev?start={base64_string}"
+    link = f"{surl}{base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔓 OPEN URL", url=f'{link}')]])
     try:
         await message.edit_reply_markup(reply_markup)
