@@ -26,7 +26,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5669934860"))
 PORT = os.environ.get("PORT", "8080")
 
 #permanent cloudflare file store url eg. https://filestore.rapidbots.workers.dev?start
-FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start="
+FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 
 #cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
 CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
