@@ -177,8 +177,8 @@ async def start_command(client: Client, message: Message):
                     from_chat_id=client.db_channel.id,
                     message_id=msg.id,
                 )
-            TURL = SURL
-            stream = f"{TURL}dl/{get_hash(log_msg)}{str(log_msg.id)}"
+            turl = SURL
+            stream = f"{turl}dl/{get_hash(log_msg)}{str(log_msg.id)}"
 
             reply_markup = InlineKeyboardMarkup(
                 [
