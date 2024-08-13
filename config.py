@@ -25,7 +25,11 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5669934860"))
 #Port
 PORT = os.environ.get("PORT", "8080")
 
-SURL = os.environ.get("SURL", "https://sk.tamilsk.workers.dev/")
+#permanent cloudflare file store url eg. https://filestore.rapidbots.workers.dev/ 
+FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev/")
+
+#cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
+CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
