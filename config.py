@@ -31,6 +31,8 @@ FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 #cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
 CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 
+STREAM = os.environ.get("STREAM", "True")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez2")
