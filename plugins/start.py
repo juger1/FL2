@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, DELETE_TIME
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -21,8 +21,9 @@ from pyrogram.raw.types.messages import Messages
 
 logging.basicConfig(level=logging.INFO)
 
+deltime = DELETE_TIME
 async def delete_file(message: Message):
-    await asyncio.sleep(30)
+    await asyncio.sleep({deltime})
     await message.delete()
 
 async def parse_file_id(message: "Message") -> Optional[FileId]:
