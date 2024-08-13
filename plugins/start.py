@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, SURL
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -177,7 +177,7 @@ async def start_command(client: Client, message: Message):
                     from_chat_id=client.db_channel.id,
                     message_id=msg.id,
                 )
-            turl = SURL
+            turl = CURL
             stream = f"{turl}dl/{get_hash(log_msg)}{str(log_msg.id)}"
 
             reply_markup = InlineKeyboardMarkup(
