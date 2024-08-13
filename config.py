@@ -32,7 +32,10 @@ CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 STREAM = os.environ.get("STREAM", "True")
 
 #Auto delete feature if need set True else set false (must use capital T)
-DELETE = os.environ.get("STREAM", "True")
+DELETE = os.environ.get("DELETE", "True")
+
+#Auto delete time in seconds
+DELETE_TIME = os.environ.get("DELETE_TIME", "60")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
