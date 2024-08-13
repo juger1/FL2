@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -192,10 +192,18 @@ async def start_command(client: Client, message: Message):
 
             try:
                 ss = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT())
+                if DELETE == "True":
+                  tt = await ss.reply_text(f"<b>𝙄𝙈𝙋𝙊𝙍𝙏𝘼𝙉𝙏  ↦↦↦⃟👉 This Movie File will be deleted in 5 minutes. So Please forward this File Before Download 📥</b>",disable_web_page_preview=True, quote=True)
+                  delete_tasks.append(asyncio.create_task(delete_file(ss))) 
+                  delete_tasks.append(asyncio.create_task(delete_file(tt)))
                 await asyncio.sleep(0.5)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 ss = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT())
+                if DELETE == "True":
+                  tt = await ss.reply_text(f"<b>𝙄𝙈𝙋𝙊𝙍𝙏𝘼𝙉𝙏  ↦↦↦⃟👉 This Movie File will be deleted in 5 minutes. So Please forward this File Before Download 📥</b>",disable_web_page_preview=True, quote=True)
+                  delete_tasks.append(asyncio.create_task(delete_file(ss))) 
+                  delete_tasks.append(asyncio.create_task(delete_file(tt)))
             except Exception as e:
                 # Log exceptions
                 logging.error(f"Exception occurred while processing messages: {e}")
