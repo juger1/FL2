@@ -31,7 +31,7 @@ FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 #cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
 CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 
-#fast dl link if need set true else set false
+#fast dl link if need set True else set false (must use capital T)
 STREAM = os.environ.get("STREAM", "True")
 
 #Database 
