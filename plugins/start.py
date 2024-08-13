@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.INFO)
 
 deltime = DELETE_TIME
 async def delete_file(message: Message):
-    await asyncio.sleep({deltime})
+    await asyncio.sleep(deltime)
     await message.delete()
 
 async def parse_file_id(message: "Message") -> Optional[FileId]:
