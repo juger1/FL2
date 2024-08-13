@@ -25,6 +25,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5669934860"))
 #Port
 PORT = os.environ.get("PORT", "8080")
 
+SURL = os.environ.get("SURL", "https://sk.tamilsk.workers.dev/")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez2")
