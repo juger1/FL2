@@ -75,9 +75,6 @@ def get_media_file_size(m):
     media = get_media_from_message(m)
     return getattr(media, "file_size", 0)
 
-verifymsg = VERIFY_MSG
-verifiedmsg = VERIFIED_MSG
-
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -97,7 +94,7 @@ async def start_command(client: Client, message: Message):
                 if str(id) == verify_userid:
                     is_valid = await check_token(id, token)
                     if is_valid:
-                        await message.reply_text(text=f"verifiedmsg")
+                        await message.reply_text(text=VERIFIED_MSG)
                         await verify_user(id, token)
                     else:
                         return await message.reply_text(
@@ -115,7 +112,7 @@ async def start_command(client: Client, message: Message):
                 InlineKeyboardButton("🔻 How to open and Verify 🔺", url="https://t.me/TamilSk_Demo/3")
             ]]
             await message.reply_text(
-                text = VERIFIED_MSG,
+                text = VERIFY_MSG,
                 protect_content=False,
                 
                 reply_markup=InlineKeyboardMarkup(btn)
