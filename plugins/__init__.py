@@ -1,4 +1,4 @@
-#(©)Rapid_botsyme
+#(©)Rapid_bots
 
 
 
