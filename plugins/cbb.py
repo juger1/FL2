@@ -1,4 +1,4 @@
-#(©)Codexbotz
+#(©)Rapid_bots
 
 from pyrogram import __version__
 from bot import Bot
