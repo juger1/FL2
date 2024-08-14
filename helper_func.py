@@ -1,4 +1,4 @@
-#(©)lcu_bots
+#(©)Rapid_Bots
 
 import base64
 import re
