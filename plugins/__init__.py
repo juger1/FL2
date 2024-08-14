@@ -1,5 +1,4 @@
-#(©)Codexbotz
-#@iryme
+#(©)Rapid_botsyme
 
 
 
