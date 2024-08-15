@@ -50,7 +50,7 @@ VERIFIED_MSG = os.environ.get("VERIFIED_MSG", "<b>You Are Successfully Verified 
 VERIFY_MSG = os.environ.get("VERIFY_MSG", "<b>Hello 👋🏻, You Need To Verify The Link To Get Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>")
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "<b>👋🏻 нєℓℓo {first}\n\nɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ.\n\n🄼🄰🄳🄴 🄱🅈 @Rapid_Bots</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>👋🏻 нєℓℓo {first}\n\nɪᴛ's ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ, ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ.\n\n🄼🄰🄳🄴 🄱🅈 @Rapid_Bots</b>")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
