@@ -18,7 +18,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 ├⍟ ᴍᴏᴠɪᴇꜱ : <a href='https://telegram.me/TamilSk_Moviez'>ᴛᴀᴍɪʟꜱᴋ ᴍᴏᴠɪᴇᴢ</a>
 ├⍟ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://telegram.me/Rapid_Bots'>ʀᴀᴘɪᴅ ʙᴏᴛꜱ</a>
 ├⍟ ᴍʏ ʙᴇsᴛ ꜰʀɪᴇɴᴅ : <a href='tg://settings'>ᴛʜɪs ᴘᴇʀsᴏɴ</a>
-╰────────────────────⍟</b>""",
+╰────────────────⍟</b>""",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
