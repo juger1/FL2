@@ -282,11 +282,11 @@ async def get_users(client: Bot, message: Message):
     users = await db.total_users_count()
     await msg.edit(f"{users} users are using this bot")
 
-@Bot.on_message(filters.command('channel') & filters.private)
+@Bot.on_message(filters.command('channels') & filters.private)
 async def channel_text(client: Bot, message: Message):
     channeltext = f"""<b>
 ╭────────────────╮
-            👤 Cʜᴀɴɴᴇʟ List 👤
+                👤 Cʜᴀɴɴᴇʟ List 👤
 ╰────────────────╯
 ╭────────────────
 ✪ Sᴋ Vᴇʀɪғɪᴇᴅ Cʜᴀɴɴᴇʟ'ꜱ
