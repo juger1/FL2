@@ -303,7 +303,7 @@ async def channel_text(client: Bot, message: Message):
 │➩ Top Cooku Dupe Cooku
 │ https://t.me/+jfivsh1ShrA0MTE1
 ╰────────────────
-Pᴏᴡᴇʀᴇᴅ Bʏ @Sk_Network
+Pᴏᴡᴇʀᴇᴅ Bʏ @Tamilsk_Moviez
 </b>
 """
     msg = await client.send_message(chat_id=message.chat.id, text=channeltext)
