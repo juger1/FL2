@@ -44,7 +44,7 @@ FORCE_SUB_CHANNEL = lambda: int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #verified message
-VERIFIED_MSG = os.environ.get("VERIFIED_MSG", "<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nNaruto Shippuden Tamil - https://t.me/+Q3fgiRFgEOViY2I1\n\nTamil Movies/Series - https://t.me/+lW8rqXwP8qQ0ODZl\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
+VERIFIED_MSG = os.environ.get("VERIFIED_MSG", "<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nTamil Movies/Series - https://t.me/+lW8rqXwP8qQ0ODZl\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
 
 #verify message
 VERIFY_MSG = os.environ.get("VERIFY_MSG", "<b>Hello 👋🏻, You Need To Verify The Link To Get Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>")
