@@ -285,13 +285,25 @@ async def get_users(client: Bot, message: Message):
 @Bot.on_message(filters.command('channel') & filters.private)
 async def channel_text(client: Bot, message: Message):
     channeltext = f"""<b>
-Tamil Movies/Series - https://t.me/+olErE7817bAyMjk1
-
-Vijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl
-
-CWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl
-
-Top Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1
+╭──────────────────────╮
+         👤 Cʜᴀɴɴᴇʟ List 👤
+╰──────────────────────╯
+╭──────────────────────
+✪ Sᴋ Vᴇʀɪғɪᴇᴅ Cʜᴀɴɴᴇʟ'ꜱ
+│
+│➩ Tamil Movies/Series
+│ https://t.me/+olErE7817bAyMjk1
+│
+│➩ Vijay Tv Serials/Shows
+│ https://t.me/+Jk4hcVP8A-43ZjZl
+│
+│➩ Cook With Comali Season 5
+│ https://t.me/+G3yps9kTPE04ZDFl
+│
+│➩ Top Cooku Dupe Cooku
+│ https://t.me/+jfivsh1ShrA0MTE1
+╰──────────────────────
+Pᴏᴡᴇʀᴇᴅ Bʏ @Sk_Network
 </b>
 """
     msg = await client.send_message(chat_id=message.chat.id, text=channeltext)
