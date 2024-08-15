@@ -282,6 +282,20 @@ async def get_users(client: Bot, message: Message):
     users = await db.total_users_count()
     await msg.edit(f"{users} users are using this bot")
 
+@Bot.on_message(filters.command('channel') & filters.private)
+async def channel_text(client: Bot, message: Message):
+    channeltext = f"""<b>
+Tamil Movies/Series - https://t.me/+olErE7817bAyMjk1
+
+Vijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl
+
+CWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl
+
+Top Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1
+</b>
+"""
+    msg = await client.send_message(chat_id=message.chat.id, text=channeltext)
+
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, m: Message):
     all_users = await db.get_all_users()
