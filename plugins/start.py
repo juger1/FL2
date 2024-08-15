@@ -285,14 +285,14 @@ async def get_users(client: Bot, message: Message):
 @Bot.on_message(filters.command('channel') & filters.private)
 async def channel_text(client: Bot, message: Message):
     channeltext = f"""<b>
-╭───────────────────╮
-         👤 Cʜᴀɴɴᴇʟ List 👤
-╰───────────────────╯
-╭───────────────────
+╭────────────────╮
+            👤 Cʜᴀɴɴᴇʟ List 👤
+╰────────────────╯
+╭────────────────
 ✪ Sᴋ Vᴇʀɪғɪᴇᴅ Cʜᴀɴɴᴇʟ'ꜱ
 │
 │➩ Tamil Movies/Series
-│ https://t.me/+olErE7817bAyMjk1
+│ https://t.me/+lW8rqXwP8qQ0ODZl
 │
 │➩ Vijay Tv Serials/Shows
 │ https://t.me/+Jk4hcVP8A-43ZjZl
@@ -302,7 +302,7 @@ async def channel_text(client: Bot, message: Message):
 │
 │➩ Top Cooku Dupe Cooku
 │ https://t.me/+jfivsh1ShrA0MTE1
-╰───────────────────
+╰────────────────
 Pᴏᴡᴇʀᴇᴅ Bʏ @Sk_Network
 </b>
 """
