@@ -29,7 +29,7 @@ FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 
 #fast dl link if need set True else set false (must use capital T)
-STREAM = os.environ.get("STREAM", "False")
+STREAM = os.environ.get("STREAM", "True")
 
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
