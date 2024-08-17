@@ -194,21 +194,24 @@ async def start_command(client: Client, message: Message):
             else:
                 caption = "" if not msg.caption else msg.caption.html
                 
-            if STREAM == "True":
-                log_msg = await client.copy_message(
-                        chat_id=FL_CHANNEL,
-                        from_chat_id=client.db_channel.id,
-                        message_id=msg.id,
+            if msg.video or msg.document:    
+                if STREAM == "True":
+                    log_msg = await client.copy_message(
+                            chat_id=FL_CHANNEL,
+                            from_chat_id=client.db_channel.id,
+                            message_id=msg.id,
+                        )
+                    turl = CURL
+                    stream = f"{turl}dl/{get_hash(log_msg)}{str(log_msg.id)}"
+
+                    reply_markup = InlineKeyboardMarkup(
+                        [
+                            [InlineKeyboardButton("Fast Download Link (Google)", url=stream)]
+                        ]
                     )
-                turl = CURL
-                stream = f"{turl}dl/{get_hash(log_msg)}{str(log_msg.id)}"
 
-                reply_markup = InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton("Fast Download Link (Google)", url=stream)]
-                    ]
-                )
-
+                else:
+                    reply_markup = None
             else:
                 reply_markup = None
 
