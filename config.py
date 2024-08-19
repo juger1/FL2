@@ -33,7 +33,7 @@ DELETE = os.environ.get("DELETE", "false")
 SRT_VERIFY = os.environ.get("SRT_VERIFY", "True")
 
 #verify URL if need set True else set false (must use capital T)
-VERIFY = os.environ.get("VERIFY", "True")
+VERIFY = os.environ.get("VERIFY", "false")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
