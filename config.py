@@ -37,7 +37,7 @@ VERIFY = os.environ.get("VERIFY", "false")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez2")
+DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez")
 
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = lambda: int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
