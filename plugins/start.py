@@ -102,7 +102,7 @@ async def start_command(client: Client, message: Message):
                         )
     else:
         if SRT_VERIFY == "True":
-        reply_markup = InlineKeyboardMarkup(
+            reply_markup = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("😊 About Me", callback_data = "about"),
