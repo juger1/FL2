@@ -2,6 +2,7 @@
 
 import os
 import logging
+from script import ADMINS
 from logging.handlers import RotatingFileHandler
 
 #Bot token @Botfather
