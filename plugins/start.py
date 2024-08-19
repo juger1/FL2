@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, VERIFY_MSG, VERIFIED_MSG, SRT_VERIFY
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, VERIFY_MSG, VERIFIED_MSG, SRT_VERIFY, VERIFY, EVERIFY_MSG
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -130,18 +130,31 @@ async def start_command(client: Client, message: Message):
         is_verified = await check_verification(id)
         
         if not is_verified:
-            btn = [[
-                InlineKeyboardButton("👨‍💻 Verify", url=await get_token(id, f"https://filestore.rapidbots.workers.dev?start="))
-                ],[
-                InlineKeyboardButton("🔻 How to open and Verify 🔺", url="https://t.me/TamilSk_Demo/3")
-            ]]
-            await message.reply_text(
-                text = VERIFY_MSG,
-                protect_content=False,
-                
-                reply_markup=InlineKeyboardMarkup(btn)
-            )
-            return
+            if VERIFY == 'True':
+                btn = [[
+                    InlineKeyboardButton("👨‍💻 Verify", url=await get_token(id, f"https://filestore.rapidbots.workers.dev?start="))
+                    ],[
+                    InlineKeyboardButton("🔻 How to open and Verify 🔺", url="https://t.me/TamilSk_Demo/3")
+                ]]
+                await message.reply_text(
+                    text = VERIFY_MSG,
+                    protect_content=False,
+                    
+                    reply_markup=InlineKeyboardMarkup(btn)
+                )
+                return
+
+            else:
+                btn = [
+                    InlineKeyboardButton("🔻 Click Here To Verify 🔺", url="https://t.me/Sk_Verify_Bot?start=Z2V0LTE1NjIxNTk2OTQ4NDg0Njky")
+                ]
+                await message.reply_text(
+                    text = EVERIFY_MSG,
+                    protect_content=False,
+                    
+                    reply_markup=InlineKeyboardMarkup(btn)
+                )
+                return
         
     if len(text)>7:
         try:
