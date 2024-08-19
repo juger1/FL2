@@ -1,5 +1,7 @@
 #(©)Rapid_Bots
 
+import os
+
 #permanent cloudflare file store url eg. https://filestore.rapidbots.workers.dev?start
 FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 
