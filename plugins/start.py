@@ -12,7 +12,7 @@ from pyrogram.file_id import FileId
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, VERIFY_MSG, VERIFIED_MSG
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FL_CHANNEL, CURL, STREAM, DELETE, VERIFY_MSG, VERIFIED_MSG, SRT_VERIFY
 from helper_func import subscribed, encode, decode, get_messages, check_token, get_token, verify_user, check_verification
 from database.database import db
 import logging
@@ -100,7 +100,31 @@ async def start_command(client: Client, message: Message):
                         return await message.reply_text(
                             text="<b>Expired or invalid Verification Link 🫣 Click /Start And Verify Again 😊</b>"
                         )
-    
+    else:
+        if SRT_VERIFY == "True":
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("😊 About Me", callback_data = "about"),
+                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    ]
+                ]
+            )
+            await message.reply_text(
+                text = START_MSG.format(
+                    first = message.from_user.first_name,
+                    last = message.from_user.last_name,
+                    username = None if not message.from_user.username else '@' + message.from_user.username,
+                    mention = message.from_user.mention,
+                    id = message.from_user.id
+                ),
+                reply_markup = reply_markup,
+                disable_web_page_preview = True,
+                quote = True
+            )
+            return
+
+
     if not is_admin: 
         text = message.text
         is_verified = await check_verification(id)
