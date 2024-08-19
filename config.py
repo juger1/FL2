@@ -29,8 +29,8 @@ STREAM = os.environ.get("STREAM", "True")
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
 
-#start msg without verify if need set TRue else set false (must use capital T)
-SRT_VERIFY = os.environ.get("SRT_VERIFY", "false")
+#start msg without verify if need set True else set false (must use capital T)
+SRT_VERIFY = os.environ.get("SRT_VERIFY", "True")
 
 #verify URL if need set True else set false (must use capital T)
 VERIFY = os.environ.get("VERIFY", "True")
