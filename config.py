@@ -34,6 +34,9 @@ STREAM = os.environ.get("STREAM", "True")
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
 
+#Auto delete feature if need set True else set false (must use capital T)
+SRT_VERIFY = os.environ.get("SRT_VERIFY", "false")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez2")
