@@ -151,7 +151,7 @@ async def start_command(client: Client, message: Message):
                     
                     reply_markup=InlineKeyboardMarkup(
                         [
-                            [InlineKeyboardButton("Fast Download Link (Google)", url=stream)]
+                            [InlineKeyboardButton("Click Here To Verify", url="https://t.me/Sk_Verify_Bot?start=Z2V0LTE1NjIxNTk2OTQ4NDg0Njky")]
                         ]
                     )
                 )
