@@ -100,8 +100,8 @@ async def start_command(client: Client, message: Message):
                         return await message.reply_text(
                             text="<b>Expired or invalid Verification Link 🫣 Click /Start And Verify Again 😊</b>"
                         )
-    if SRT_VERIFY == "True":
-        else:
+    else:
+        if SRT_VERIFY == "True":
         reply_markup = InlineKeyboardMarkup(
             [
                 [
