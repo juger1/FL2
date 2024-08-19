@@ -25,7 +25,7 @@ PORT = os.environ.get("PORT", "8080")
 #permanent cloudflare file store url eg. https://filestore.rapidbots.workers.dev?start
 FURL = os.environ.get("FURL", "https://filestore.rapidbots.workers.dev?start=")
 
-#cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
+#stream cloudflare permanent url eg. https://sk.tamilsk.workers.dev/
 CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 
 #fast dl link if need set True else set false (must use capital T)
@@ -34,7 +34,7 @@ STREAM = os.environ.get("STREAM", "True")
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
 
-#Auto delete feature if need set True else set false (must use capital T)
+#start msgj without verify if need set True else set false (must use capital T)
 SRT_VERIFY = os.environ.get("SRT_VERIFY", "false")
 
 #Database 
@@ -81,7 +81,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(1250450587)
+ADMINS.append(5669934860)
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
