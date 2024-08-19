@@ -147,7 +147,7 @@ async def short_link(link):
         api = "e36f2573636d8a5dd3b81b64ce434db80002867a"
         site = "ModiJiUrl.com"
     else:  
-        api = "8b2aa79be0fe87e9299264924b6909117f2c0f22"
+        api = "e36f2573636d8a5dd3b81b64ce434db80002867a"
         site = "ModiJiUrl.com"
     
     shortzy = Shortzy(api, site) 
