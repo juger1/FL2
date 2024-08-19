@@ -29,11 +29,11 @@ STREAM = os.environ.get("STREAM", "True")
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
 
-#start msg without verify if need set false else set True (must use capital T)
-SRT_VERIFY = os.environ.get("SRT_VERIFY", "True")
+#start msg without verify if need set TRue else set false (must use capital T)
+SRT_VERIFY = os.environ.get("SRT_VERIFY", "false")
 
-#start msgj without verify if need set True else set false (must use capital T)
-VERIFY = os.environ.get("VERIFY", "false")
+#verify URL if need set True else set false (must use capital T)
+VERIFY = os.environ.get("VERIFY", "True")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
