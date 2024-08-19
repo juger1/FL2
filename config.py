@@ -37,6 +37,12 @@ DELETE = os.environ.get("DELETE", "false")
 #start msgj without verify if need set True else set false (must use capital T)
 SRT_VERIFY = os.environ.get("SRT_VERIFY", "false")
 
+#start msgj without verify if need set True else set false (must use capital T)
+VERIFY = os.environ.get("VERIFY", "false")
+
+#else verified message if verify false it work 
+EVERIFY_MSG = os.environ.get("EVERIFY_MSG", "<b>Hello 👋🏻, You Need To Verify To Get Files, Open Below Bot For Verification. \n\nOpen @Sk_Verify_Bot & Start The Bot 👍</b>")
+
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez2")
