@@ -350,7 +350,7 @@ Pᴏᴡᴇʀᴇᴅ Bʏ @Tamilsk_Moviez
 """
     msg = await client.send_message(chat_id=message.chat.id, text=channeltext)
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
+@Bot.on_message(filters.private & filters.command('skbroadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, m: Message):
     all_users = await db.get_all_users()
     broadcast_msg = m.reply_to_message
