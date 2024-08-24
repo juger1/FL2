@@ -24,7 +24,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "5669934860"))
 PORT = os.environ.get("PORT", "8080")
 
 #fast dl link if need set True else set false (must use capital T)
-STREAM = os.environ.get("STREAM", "True")
+STREAM = os.environ.get("STREAM", "false")
 
 #Auto delete feature if need set True else set false (must use capital T)
 DELETE = os.environ.get("DELETE", "false")
