@@ -334,7 +334,7 @@ async def channel_text(client: Bot, message: Message):
 ✪ Sᴋ Vᴇʀɪғɪᴇᴅ Cʜᴀɴɴᴇʟ'ꜱ
 │
 │➩ Tamil Movies/Series
-│ https://t.me/+lW8rqXwP8qQ0ODZl
+│ https://t.me/+oFpcr9j8ZxNlNTg9
 │
 │➩ Vijay Tv Serials/Shows
 │ https://t.me/+Jk4hcVP8A-43ZjZl
