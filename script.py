@@ -12,7 +12,7 @@ CURL = os.environ.get("CURL", "https://sk.tamilsk.workers.dev/")
 EVERIFY_MSG = os.environ.get("EVERIFY_MSG", "<b>Hello 👋🏻, You Need To Verify To Get Files, Open Below Bot For Verification. \n\nOpen @Sk_Verify_Bot & Start The Bot 👍</b>")
 
 #verified message
-VERIFIED_MSG = os.environ.get("VERIFIED_MSG", "<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nTamil Movies/Series - https://t.me/+lW8rqXwP8qQ0ODZl\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
+VERIFIED_MSG = os.environ.get("VERIFIED_MSG", "<b>You Are Successfully Verified ❤️‍🩹\n\nYou Can Get Any Files Without Verifiy Untill Next 12Hrs.\n\nTamil Movies/Series - https://t.me/+oFpcr9j8ZxNlNTg9\n\nVijay Tv Serials/Shows - https://t.me/+Jk4hcVP8A-43ZjZl\n\nCWC Season 5 - https://t.me/+G3yps9kTPE04ZDFl\n\nTop Cooku Dupe Cooku - https://t.me/+jfivsh1ShrA0MTE1</b>")
 
 #verify message
 VERIFY_MSG = os.environ.get("VERIFY_MSG", "<b>Hello 👋🏻, You Need To Verify The Link To Get Files, Verification Will Be Expired After 12 Hours.\n\nif You Don't Know how To Verify. Click Below Button To See How To Verify The Link.</b>")
