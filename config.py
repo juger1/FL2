@@ -58,7 +58,7 @@ ADMINS.append(1218204444)
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
-FL_CHANNEL = int(os.environ.get("FL_CHANNEL", "-1002116723783"))
+FL_CHANNEL = int(os.environ.get("FL_CHANNEL", "-1002092856252"))
 
 logging.basicConfig(
     level=logging.INFO,
