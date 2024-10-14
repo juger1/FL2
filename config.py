@@ -6,19 +6,19 @@ from script import ADMINS
 from logging.handlers import RotatingFileHandler
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7288528064:AAGVAtgJ0X2aE8sBUaVR-wd3_MUoddez1GM")
 
 #Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", "8754146"))
+APP_ID = int(os.environ.get("APP_ID", "25695562"))
 
 #Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "8b56a6989f6d04f6f4fe78133ade02fd")
+API_HASH = os.environ.get("API_HASH", "0b691c3e86603a7e34aae0b5927d725a")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001512818854"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001732352061"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "5669934860"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1895952308"))
 
 #Port
 PORT = os.environ.get("PORT", "8080")
@@ -27,20 +27,20 @@ PORT = os.environ.get("PORT", "8080")
 STREAM = os.environ.get("STREAM", "True")
 
 #Auto delete feature if need set True else set false (must use capital T)
-DELETE = os.environ.get("DELETE", "false")
+DELETE = os.environ.get("DELETE", "True")
 
 #start msg without verify if need set True else set false (must use capital T)
 SRT_VERIFY = os.environ.get("SRT_VERIFY", "True")
 
 #verify URL if need set True else set false (must use capital T)
-VERIFY = os.environ.get("VERIFY", "false")
+VERIFY = os.environ.get("VERIFY", "True")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://SkMedia:Tharunraj1828@cluster0.vbdxs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "tamilskmoviez")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = lambda: int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+FORCE_SUB_CHANNEL = lambda: int(os.environ.get("FORCE_SUB_CHANNEL", "-1002005229886"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
